@@ -10,7 +10,7 @@
 .slider ul {
 	display: flex;
 	padding: 0;
-	width: 400%;
+	width: 300%;
 
 	animation: cambio 20s infinite alternate;
 	animation-timing-function: ease-in;
@@ -18,32 +18,72 @@
 
 /* Display sirve para poner una imagen a lado de la otra */
 /* Padding quita el marco que genera el margen automatico */
-/* Width en este caso para mantener el tama�o de cada imagen y separarlas */
+/* Width en este caso para mantener el tama�o de cada imagen y separarlas */
 
 
 .slider li {
 	width: 100%;
-	list-stlyle: none;
+	list-style: none;
 }
 
 .slider img {
 	width: 100%;
+	height: auto; /* Permitir que la altura se ajuste automáticamente */
+	object-fit: cover; /* Ajustar la imagen manteniendo la proporción y cubriendo el contenedor */
+	max-width: 600px; /* Limitar el ancho máximo de la imagen a 600px */
+	max-height: 400px; /* Limitar la altura máxima de la imagen a 400px */
 }
 
 @keyframes cambio {
-	0% { margin-left: 0; }
-	20% { margin-left: 0; }
-	
-	25% { margin-left: -100%;}
-	45% { margin-left: -100%;}
-
-	
-	50% { margin-left: -200%;}
-	70% { margin-left: -200%;}
-	
-	75% { margin-left: -300%;}
-	100% { margin-left: -300%;}
-}
+	0%, 100% { margin-left: 0; }
+	25%, 45% { margin-left: -100%; }
+	50%, 70% { margin-left: -200%; }
+	75% { margin-left: -300%; }
+  }
 
 /* Keyframes da las paradas de transiciones a la animacion  */
-/* -100% porque es el tama�o de cada imagen y lo que hace es moverlo*/
+/* -100% porque es el tama�o de cada imagen y lo que hace es moverlo*/
+
+footer {
+    background-color: #d3d3d3;
+    padding: 20px;
+	margin-left: 300px;
+	margin-right: 300px;
+}
+
+.comentarios {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.comentarios h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
